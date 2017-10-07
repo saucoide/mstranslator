@@ -131,10 +131,11 @@ class Translator(object):
                                contenttype, category)
 
     def get_translations(self, text, lang_from, lang_to, max_n=10, contenttype='text/plain', category='general',
-                         url=None, user=None, state=None):
+                         url=None, user=None, state=None, multi='true'):
         options = {
             'Category': category,
             'ContentType': contenttype,
+            'IncludeMultipleMTAlternatives': multi
         }
         if url:
             options['Uri'] = url
